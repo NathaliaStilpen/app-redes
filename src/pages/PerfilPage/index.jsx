@@ -1,34 +1,42 @@
 import React, { useState, useContext } from "react";
+import "./styles.css";
 
 import { AuthContext } from "../../contexts/auth";
+import perfilImg from '../../assets/perfil.jpg'
 
 
 
 
 const PerfilPage = () => {
 
-    const { authenticated, login } = useContext(AuthContext);
-
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("submit", {email, password });
-        login(email, password);
-
-    };
-
 
     return(
 <div className="container">
-      <div className="container-login">
-        <div className="wrap-login">
-          <form className="login-form">
-            <span className="login-form-title"> Bem vindo </span>
+      <div className="container-perfil">
+        <div className="wrap-perfil">
+          
+            <div className="perfil">
+              <div className="name-box">
+                <img src={perfilImg} alt="Unifei Study Groups" />
+             
+            </div>
+            </div>
+            <div className="info">
+            <h3>NOME</h3>
+            <h4>Email:</h4>
+            <h4>Curso:</h4>
+            <h4>Matricula:</h4>
+            </div>
 
-            
-          </form>
+            <div className="groups-list">
+              <h3> Grupos Cadastrados </h3>
+              <li>
+                GRUPOS
+              </li>
+
+
+
+            </div>
         </div>
       </div>
     </div>
